@@ -10,8 +10,6 @@ const LoginModal = (props) => {
             password: document.getElementById("login-password").value,
         });
 
-        console.log(query);
-
         (async () => {
             setResponse(
                 await fetch("http://localhost:5001/users/login", {
@@ -20,7 +18,6 @@ const LoginModal = (props) => {
                     headers: {"Content-Type": "application/json"},
                     body: query,
                 }).then((response) => {
-                    console.log("test");
                     return response.json();
                 }).then((data) => {
                     console.log(data);
@@ -29,31 +26,28 @@ const LoginModal = (props) => {
         )();
     }
 
-    // const addBook = () => {  
-    //     const query = JSON.stringify([{
-    //       title: document.getElementById("inputTitle").value,
-    //       author: document.getElementById("inputAuthor").value,
-    //       genre: document.getElementById("inputGenre").value,
-    //     }]);
-        
-    //     console.log(query);
-    
-    //     (async () => {
-    //       setResponse(await fetch("http://localhost:5001/books", {
-    //         method: "POST",
-    //         mode: "cors",
-    //         headers: {'Content-Type': 'application/json' },
-    //         body: query,
-    //       }).then((response) => {
-    //         return response.json();
-    //       })
-    //         .then((data) => {
-    //         console.log(data);
-    //         document.getElementById("response").innerHTML = data.message;
-    //         setRefresh(!refresh);
-    //       }))
-    //     })();
-    //   }
+    const register = () => {
+        const query = JSON.stringify({
+            username: document.getElementById("register-username").value,
+            email: document.getElementById("register-email").value,
+            password: document.getElementById("register-password").value,
+        });
+
+        (async () => {
+            setResponse(
+                await fetch("http://localhost:5001/users/register", {
+                    method: "POST",
+                    mode: "cors",
+                    headers: {"Content-Type": "application/json"},
+                    body: query,
+                }).then((response) => {
+                    return response.json();
+                }).then((data) => {
+                    console.log(data);
+                })
+            )}
+        )();
+    }
 
     return (
         <div className="form">
@@ -76,7 +70,7 @@ const LoginModal = (props) => {
                 <input id="register-email"></input></div>
             <div className="form-item">Password 
                 <input id="register-password"></input></div>
-            <button>Register</button>
+            <button onClick={register}>Register</button>
             </div>
         </div>
     )
