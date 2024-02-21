@@ -1,0 +1,61 @@
+h2 {
+    margin-top: 0;
+}
+
+button {
+    background-color: rgb(185, 209, 119);
+    margin: auto 0 0 auto;
+    border: none;
+
+    position: relative;
+    top: 12px;
+}
+
+button:hover {
+    background-color: rgb(211, 255, 129);
+}
+
+.form {
+    display: grid;
+    width: 500px;
+    grid-template-columns: 45% 10% 45%;
+    justify-self: center;
+}
+
+.form-section {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.divider {
+    background: white;
+    height: 100%;
+    width: 2px;
+    align-self: center;
+    justify-self: center;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item input {
+    background: grey;
+    border-style: none;
+    border: 0;
+    border-radius: 8px;
+    margin: 4px;
+    padding: 4px;
+    outline-style: none;
+}
+
+.form-item input:hover {
+    background-color: rgb(197, 197, 197);
+}
+
+.form-item input:focus {
+    border-style: none;
+    background-color: white;
+}
