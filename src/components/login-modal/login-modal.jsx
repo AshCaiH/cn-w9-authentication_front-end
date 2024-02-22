@@ -3,7 +3,6 @@ import { postRequest } from "../../common/requests";
 import "./login-modal.css"
 
 const LoginModal = (props) => {
-    const [res, setResponse] = useState();
     const [errorMessage, setErrorMessage] = useState();
     const [successMessage, setSuccessMessage] = useState();
     
@@ -43,8 +42,6 @@ const LoginModal = (props) => {
             setSuccessMessage("User successfully registered.")
             setErrorMessage(null)
         }
-
-        console.log(response);
     }
 
     return (
