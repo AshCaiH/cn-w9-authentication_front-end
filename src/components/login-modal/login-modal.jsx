@@ -1,52 +1,31 @@
 import { useState } from "react";
+import { makeRequest } from "../../common/requests";
 import "./login-modal.css"
 
 const LoginModal = (props) => {
     const [res, setResponse] = useState();
     
-    const login = () => {
+    const login = async () => {
         const query = JSON.stringify({
             username: document.getElementById("login-username").value,
             password: document.getElementById("login-password").value,
         });
 
-        (async () => {
-            setResponse(
-                await fetch("http://localhost:5001/users/login", {
-                    method: "POST",
-                    mode: "cors",
-                    headers: {"Content-Type": "application/json"},
-                    body: query,
-                }).then((response) => {
-                    return response.json();
-                }).then((data) => {
-                    console.log(data);
-                })
-            )}
-        )();
+        const response = await makeRequest("http://localhost:5001/users/login", query, "POST");
+
+        console.log(response);
     }
 
-    const register = () => {
+    const register = async () => {
         const query = JSON.stringify({
             username: document.getElementById("register-username").value,
             email: document.getElementById("register-email").value,
             password: document.getElementById("register-password").value,
         });
 
-        (async () => {
-            setResponse(
-                await fetch("http://localhost:5001/users/register", {
-                    method: "POST",
-                    mode: "cors",
-                    headers: {"Content-Type": "application/json"},
-                    body: query,
-                }).then((response) => {
-                    return response.json();
-                }).then((data) => {
-                    console.log(data);
-                })
-            )}
-        )();
+        const response = await makeRequest("http://localhost:5001/users/register", query, "POST");
+
+        console.log(response);
     }
 
     return (
