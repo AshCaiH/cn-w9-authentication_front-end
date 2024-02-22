@@ -13,7 +13,12 @@ const LoginModal = (props) => {
 
         const response = await postRequest("http://localhost:5001/users/login", query, "POST");
 
-        console.log(response);
+        if (response.user) {
+            console.log(response.user);
+            console.log(response.user.loginToken);
+
+            props.setToken(response.user.loginToken)
+        } else console.log(response);
     }
 
     const register = async () => {

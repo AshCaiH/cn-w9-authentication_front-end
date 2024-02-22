@@ -4,10 +4,15 @@ import './App.css'
 import MemberList from './components/member-list/member-list';
 
 function App() {
+  const [token, setToken] = useState(null);
+
   return (
     <>
-      <LoginModal />
-      <MemberList />
+      {!token ?
+        <LoginModal setToken={setToken}/>
+        :
+        <MemberList />
+      }
     </>
   )
 }
