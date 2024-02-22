@@ -1,8 +1,10 @@
 export const MemberCard = (props) => {
     return (
-        <div>
-            {props.username}
-        </div>
+        <>
+            <div>{props.user.id}</div>
+            <div>{props.user.username}</div>
+            <div>{props.user.email}</div>
+        </>
     )
 }
 

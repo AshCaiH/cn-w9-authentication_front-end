@@ -1,0 +1,6 @@
+.member-list {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: auto 100% auto;
+    column-gap: 10px;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getRequest } from "../../common/requests";
+import "./member-list.css";
 import MemberCard from './member-card';
 
 const MemberList = (props) => {
@@ -23,8 +24,11 @@ const MemberList = (props) => {
 
     return (
         <div className="member-list">
+            <div>ID</div>
+            <div>Username</div>
+            <div>Email</div>
             { members.map((item) => {
-                return <MemberCard key={item.id} username={item.username}/>
+                return <MemberCard key={item.id} user={item}/>
             })}
         </div>
     )
