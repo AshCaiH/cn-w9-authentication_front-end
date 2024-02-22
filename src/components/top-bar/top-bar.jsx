@@ -7,9 +7,14 @@ const TopBar = (props) => {
     }
 
     return (
-        <div id="top-bar">
+        <div id="top-bar">            
+            <div className="top-bar-inner">
             { props.user &&
-            <a className="logout" href="#" onClick={logout}>Log Out <RiLogoutBoxLine className="icon"/></a> }
+                <>
+                <div>Hello <b>{props.user.username}</b>!</div>
+                <a className="logout" href="#" onClick={logout}>Log Out <RiLogoutBoxLine className="icon"/></a>
+                </>
+            } </div>
         </div>
     )
 }
