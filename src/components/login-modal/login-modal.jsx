@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { makeRequest } from "../../common/requests";
+import { postRequest } from "../../common/requests";
 import "./login-modal.css"
 
 const LoginModal = (props) => {
@@ -11,7 +11,7 @@ const LoginModal = (props) => {
             password: document.getElementById("login-password").value,
         });
 
-        const response = await makeRequest("http://localhost:5001/users/login", query, "POST");
+        const response = await postRequest("http://localhost:5001/users/login", query, "POST");
 
         console.log(response);
     }
@@ -23,7 +23,7 @@ const LoginModal = (props) => {
             password: document.getElementById("register-password").value,
         });
 
-        const response = await makeRequest("http://localhost:5001/users/register", query, "POST");
+        const response = await postRequest("http://localhost:5001/users/register", query, "POST");
 
         console.log(response);
     }
