@@ -64,10 +64,3 @@ button:hover {
 .form-item input:focus-visible {
     background-color: white;
 }
-
-.error-message {
-    background-color: rgb(141, 51, 51);
-    grid-column-start: 1;
-    grid-column-end: 4;
-    padding: 12px;
-}

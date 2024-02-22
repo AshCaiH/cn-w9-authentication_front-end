@@ -15,13 +15,16 @@ export async function postRequest(url, query) {
 }
 
 
-export async function getRequest(url) {    
+export async function getRequest(url, headers) {
 
-    return await fetch(url, {
-        method: "GET",
-        mode: "cors",
-        headers: { "Content-Type": "application/json" },
-    }).then((response) => {
+    const requestObject = {
+        method: "GET"
+    }
+
+    if (headers) requestObject.headers = headers;
+
+    return await fetch(url, requestObject)
+    .then((response) => {
         return response.json();
     }).then((data) => {
         return data;

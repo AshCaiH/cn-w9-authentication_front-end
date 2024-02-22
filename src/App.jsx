@@ -11,7 +11,7 @@ function App() {
       {!token ?
         <LoginModal setToken={setToken}/>
         :
-        <MemberList />
+        <MemberList token={token}/>
       }
     </>
   )
