@@ -27,8 +27,8 @@ const MemberList = (props) => {
             <div className="grid-header">ID</div>
             <div className="grid-header">Username</div>
             <div className="grid-header">Email</div>
-            { members.map((item) => {
-                return <MemberCard key={item.id} user={item}/>
+            { members.map((item, index) => {
+                return <MemberCard key={item.id} index={index} user={item}/>
             })}
         </div>
     )
