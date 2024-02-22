@@ -5,6 +5,7 @@ import "./login-modal.css"
 const LoginModal = (props) => {
     const [res, setResponse] = useState();
     const [errorMessage, setErrorMessage] = useState();
+    const [successMessage, setSuccessMessage] = useState();
     
     const login = async () => {
         const query = JSON.stringify({
@@ -16,7 +17,12 @@ const LoginModal = (props) => {
 
         if (response.user) {
             props.setUser(response.user)
-        } else setErrorMessage(response.message);
+            setSuccessMessage("Login Successful")
+            setErrorMessage(null)
+        } else {
+            setErrorMessage(response.message);
+            setSuccessMessage(null)
+        }
     }
 
     const register = async () => {
@@ -27,6 +33,16 @@ const LoginModal = (props) => {
         });
 
         const response = await postRequest("http://localhost:5001/users/register", query, "POST");
+
+        if (response.error) {
+            console.log(response.error);
+            props.setUser(response.user)
+            setSuccessMessage(null)
+            setErrorMessage(response.message)
+        } else {
+            setSuccessMessage("User successfully registered.")
+            setErrorMessage(null)
+        }
 
         console.log(response);
     }
@@ -57,6 +73,8 @@ const LoginModal = (props) => {
 
             { errorMessage &&
             <div className="error-message">{errorMessage}</div>}
+            { successMessage &&
+            <div className="success-message">{successMessage}</div>}
         </div>
     )
 }
