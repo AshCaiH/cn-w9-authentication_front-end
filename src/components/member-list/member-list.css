@@ -1,6 +1,23 @@
 .member-list {
+    grid-template-columns: auto auto auto;
     width: fit-content;
+    height: fit-content;
     display: grid;
-    grid-template-columns: auto 100% auto;
-    column-gap: 10px;
+    margin: 30px;
+    border: 2px solid white;
+    padding: 5px;
+}
+
+.grid-header,
+.member-grid-cell {
+    padding: 3px 10px;
+}
+
+.grid-header {
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+
+.row-odd {
+    background-color: rgb(71, 71, 71);
 }

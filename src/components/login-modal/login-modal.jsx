@@ -4,6 +4,7 @@ import "./login-modal.css"
 
 const LoginModal = (props) => {
     const [res, setResponse] = useState();
+    const [errorMessage, setErrorMessage] = useState();
     
     const login = async () => {
         const query = JSON.stringify({
@@ -13,7 +14,12 @@ const LoginModal = (props) => {
 
         const response = await postRequest("http://localhost:5001/users/login", query, "POST");
 
-        console.log(response);
+        if (response.user) {
+            console.log(response.user);
+            console.log(response.user.loginToken);
+
+            props.setToken(response.user.loginToken)
+        } else setErrorMessage(response.message);
     }
 
     const register = async () => {
@@ -51,6 +57,9 @@ const LoginModal = (props) => {
                 <input id="register-password"></input></div>
             <button onClick={register}>Register</button>
             </div>
+
+            { errorMessage &&
+            <div className="error-message">{errorMessage}</div>}
         </div>
     )
 }
