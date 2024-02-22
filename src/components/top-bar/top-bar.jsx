@@ -3,14 +3,12 @@ import "./top-bar.css";
 
 const TopBar = (props) => {
     const logout = () => {
-        console.log(props.token);
-        props.setToken(null);
-        console.log(props.token);
+        props.setUser(null);
     }
 
     return (
         <div id="top-bar">
-            { props.token &&
+            { props.user &&
             <a className="logout" href="#" onClick={logout}>Log Out <RiLogoutBoxLine className="icon"/></a> }
         </div>
     )

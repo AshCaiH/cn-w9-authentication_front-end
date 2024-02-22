@@ -5,15 +5,15 @@ import MemberList from './components/member-list/member-list';
 import TopBar from './components/top-bar/top-bar';
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [user, setUser] = useState(null);
 
   return (
     <>
-      <TopBar token={token} setToken={setToken} />
-      {!token ?
-        <LoginModal setToken={setToken}/>
+      <TopBar user={user} setUser={setUser} />
+      {!user ?
+        <LoginModal setUser={setUser}/>
         :
-        <MemberList token={token}/>
+        <MemberList user={user}/>
       }
     </>
   )

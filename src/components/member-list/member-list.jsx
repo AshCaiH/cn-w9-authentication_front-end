@@ -7,17 +7,16 @@ const MemberList = (props) => {
     const [members, setMembers] = useState([]);
 
     useEffect(() => {
+
         const fetchData = async () => {
-            const headers = {authorization: "Bearer " + props.token}
+            const headers = {authorization: "Bearer " + props.user.loginToken}
             const response = await getRequest("http://localhost:5001/users", headers);
 
             setMembers(response.user)
-
-            console.log(response);
         }
 
         fetchData();
-    }, [props.token]);
+    }, [props.user]);
 
     useEffect(() => {
         console.log(members);

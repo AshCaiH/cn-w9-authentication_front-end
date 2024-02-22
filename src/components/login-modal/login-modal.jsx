@@ -15,10 +15,7 @@ const LoginModal = (props) => {
         const response = await postRequest("http://localhost:5001/users/login", query, "POST");
 
         if (response.user) {
-            console.log(response.user);
-            console.log(response.user.loginToken);
-
-            props.setToken(response.user.loginToken)
+            props.setUser(response.user)
         } else setErrorMessage(response.message);
     }
 
