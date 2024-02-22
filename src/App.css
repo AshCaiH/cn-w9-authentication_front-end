@@ -1,7 +1,10 @@
 #root {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  height:fit-content;
 }
 
 .error-message {
@@ -11,4 +14,9 @@
   grid-column-start: 1;
   grid-column-end: 4;
   padding: 12px;
+}
+
+.icon {
+  position:relative;
+  top: 4px;
 }

@@ -1,0 +1,16 @@
+#top-bar {
+    height: 40px;
+    width: 100%;
+    background-color: brown;
+    font-size: 18pt;
+    text-align: right;
+}
+
+.logout {
+    color: white;
+    margin-right: 4px;
+}
+
+.logout:hover {
+    color: rgb(255, 246, 162);
+}
