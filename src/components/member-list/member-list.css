@@ -4,3 +4,8 @@
     grid-template-columns: auto 100% auto;
     column-gap: 10px;
 }
+
+.grid-header {
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}

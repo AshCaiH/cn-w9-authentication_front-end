@@ -20,6 +20,7 @@ button:hover {
     width: 500px;
     grid-template-columns: 45% 10% 45%;
     justify-self: center;
+    margin-bottom: 30px;
 }
 
 .form-section {
