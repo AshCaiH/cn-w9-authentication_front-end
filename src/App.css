@@ -28,3 +28,17 @@
   position:relative;
   top: 4px;
 }
+
+@keyframes rotating {
+  from {
+    rotate: 0deg;
+  } to {
+    rotate: 360deg;
+  }
+}
+
+.loading-icon {
+  font-size: 24pt;
+  margin: 30px;
+  animation: rotating 2s linear infinite;
+}
