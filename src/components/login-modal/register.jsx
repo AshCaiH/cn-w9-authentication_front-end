@@ -28,7 +28,7 @@ const Register = (props) => {
     }
 
     return (
-        <div id="register-form" className="form-section end-section">
+        <form id="register-form" className="form-section end-section" onSubmit={register}>
             <h2>Register</h2>
             <div className="form-item">Username 
                 <input id="register-username"   onChange={(e) => setUsername(e.target.value)}></input></div>
@@ -37,7 +37,7 @@ const Register = (props) => {
             <div className="form-item">Password 
                 <input id="register-password"   onChange={(e) => setPassword(e.target.value)}></input></div>
             <button onClick={register}>Register</button>
-        </div>
+        </form>
     )
 }
 
