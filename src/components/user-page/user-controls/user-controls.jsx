@@ -2,16 +2,9 @@ import { deleteRequest } from "../../../common/requests";
 
 const UserControls = (props) => {
     const deleteUser = async () => {
+        const headers = {authorization: "Bearer " + props.user.loginToken}
+        const response = await deleteRequest("http://localhost:5001/users/delete", headers);
 
-        const query = JSON.stringify({
-            username: props.user.username,
-        });
-
-        console.log(query);
-
-        const response = await deleteRequest("http://localhost:5001/users/delete", query);
-
-        console.log(response);
         props.setUser(null);
     }
 

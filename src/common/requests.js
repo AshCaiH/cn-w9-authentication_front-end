@@ -32,13 +32,25 @@ export async function getRequest(url, headers) {
 
 }
 
-export async function deleteRequest(url, query, headers) {
+export async function updateRequest(url, headers, query) {
 
-    const requestObject = {
-        method: "DELETE",
+    return await fetch(url, {
+        method: "POST",
         mode: "cors",
         headers: { "Content-Type": "application/json" },
         body: query,
+    }).then((response) => {
+        return response.json();
+    }).then((data) => {
+        return data;
+    })
+
+}
+
+export async function deleteRequest(url, headers) {
+
+    const requestObject = {
+        method: "DELETE",
     }
 
     if (headers) requestObject.headers = headers;
