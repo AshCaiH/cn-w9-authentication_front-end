@@ -25,7 +25,7 @@ const Login = (props) => {
     }
 
     return (
-        <form id="login-form" className="form-section start-section">
+        <form id="login-form" className="form-section start-section" onSubmit={(e) => e.preventDefault()}>
             <h2>Login</h2>
             <div className="form-item">Username
                 <input id="login-username" onChange={(e) => setUsername(e.target.value)}></input></div>

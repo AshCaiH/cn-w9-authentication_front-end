@@ -28,7 +28,7 @@ const Register = (props) => {
     }
 
     return (
-        <form id="register-form" className="form-section end-section">
+        <form id="register-form" className="form-section end-section" onSubmit={(e) => e.preventDefault()}>
             <h2>Register</h2>
             <div className="form-item">Username 
                 <input id="register-username"   onChange={(e) => setUsername(e.target.value)}></input></div>
