@@ -31,3 +31,23 @@ export async function getRequest(url, headers) {
     })
 
 }
+
+export async function deleteRequest(url, query, headers) {
+
+    const requestObject = {
+        method: "DELETE",
+        mode: "cors",
+        headers: { "Content-Type": "application/json" },
+        body: query,
+    }
+
+    if (headers) requestObject.headers = headers;
+
+    return await fetch(url, requestObject)
+    .then((response) => {
+        return response.json();
+    }).then((data) => {
+        return data;
+    })
+
+}

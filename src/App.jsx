@@ -13,7 +13,7 @@ function App() {
       {!user ?
         <LoginModal setUser={setUser}/>
         :
-        <UserPage user={user}/>
+        <UserPage user={user} setUser={setUser}/>
       }
     </>
   )
