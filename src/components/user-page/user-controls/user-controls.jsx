@@ -10,7 +10,8 @@ const UserControls = (props) => {
 
     return (
         <>
-        <p>Update this account</p>
+        {/* <p>Update this account</p> */}
+        <p>You are logged in as <b>{props.user.username}</b></p> 
         <button className="red" onClick={deleteUser}>Delete This Account</button>
         </>
     )
