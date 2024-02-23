@@ -3,7 +3,7 @@ import { AiOutlineLoading } from "react-icons/ai";
 
 import "./member-list.css";
 import MemberCard from './member-card';
-import { getRequest } from "../../common/requests";
+import { getRequest } from "../../../common/requests";
 
 const MemberList = (props) => {
     const [members, setMembers] = useState("loading");

@@ -31,7 +31,7 @@ const Login = (props) => {
                 <input id="login-username" onChange={(e) => setUsername(e.target.value)}></input></div>
             <div className="form-item">Password
                 <input id="login-password" onChange={(e) => setPassword(e.target.value)}></input></div>
-            <button onClick={login}>Log In</button>
+            <button className="green" onClick={login}>Log In</button>
         </form>
     )
 

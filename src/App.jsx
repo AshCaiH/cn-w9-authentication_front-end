@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import LoginModal from "./components/login-modal/login-modal";
 import './App.css'
-import MemberList from './components/member-list/member-list';
 import TopBar from './components/top-bar/top-bar';
+import UserPage from './components/user-page/user-page';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -13,7 +13,7 @@ function App() {
       {!user ?
         <LoginModal setUser={setUser}/>
         :
-        <MemberList user={user}/>
+        <UserPage user={user}/>
       }
     </>
   )

@@ -36,7 +36,7 @@ const Register = (props) => {
                 <input id="register-email"      onChange={(e) => setEmail(e.target.value)}></input></div>
             <div className="form-item">Password 
                 <input id="register-password"   onChange={(e) => setPassword(e.target.value)}></input></div>
-            <button onClick={register}>Register</button>
+            <button className="green" onClick={register}>Register</button>
         </form>
     )
 }

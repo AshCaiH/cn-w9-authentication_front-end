@@ -2,17 +2,12 @@ h2 {
     margin-top: 0;
 }
 
-button {
+form button {
     background-color: rgb(185, 209, 119);
     margin: auto 0 0 auto;
-    border: none;
 
     position: relative;
     top: 12px;
-}
-
-button:hover {
-    background-color: rgb(211, 255, 129);
 }
 
 .form {
