@@ -22,6 +22,8 @@ const Login = (props) => {
             setErrorMessage(response.message);
             setSuccessMessage(null)
         }
+
+        sessionStorage.setItem("token", response.user.loginToken)
     }
 
     return (
