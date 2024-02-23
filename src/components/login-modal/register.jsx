@@ -1,6 +1,8 @@
 import { postRequest } from "../../common/requests";
 
 const Register = (props) => {
+    const {setUser, setSuccessMessage, setErrorMessage} = props;
+
     const register = async () => {
         const query = JSON.stringify({
             username: document.getElementById("register-username").value,
@@ -12,12 +14,12 @@ const Register = (props) => {
 
         if (response.error) {
             console.log(response.error);
-            props.setUser(response.user)
-            props.setSuccessMessage(null)
-            props.setErrorMessage(response.message)
+            setUser(response.user)
+            setSuccessMessage(null)
+            setErrorMessage(response.message)
         } else {
-            props.setSuccessMessage("User successfully registered.")
-            props.setErrorMessage(null)
+            setSuccessMessage("User successfully registered.")
+            setErrorMessage(null)
         }
     }
 

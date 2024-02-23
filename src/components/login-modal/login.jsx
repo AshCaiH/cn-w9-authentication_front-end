@@ -2,6 +2,8 @@ import { postRequest } from "../../common/requests";
 
 const Login = (props) => {
 
+    const {setUser, setSuccessMessage, setErrorMessage} = props;
+
     const login = async () => {
         const query = JSON.stringify({
             username: document.getElementById("login-username").value,
@@ -11,12 +13,12 @@ const Login = (props) => {
         const response = await postRequest("http://localhost:5001/users/login", query, "POST");
 
         if (response.user) {
-            props.setUser(response.user)
-            props.setSuccessMessage("Login Successful")
-            props.setErrorMessage(null)
+            setUser(response.user)
+            setSuccessMessage("Login Successful")
+            setErrorMessage(null)
         } else {
-            props.setErrorMessage(response.message);
-            props.setSuccessMessage(null)
+            setErrorMessage(response.message);
+            setSuccessMessage(null)
         }
     }
 
