@@ -3,6 +3,7 @@ import "./top-bar.css";
 
 const TopBar = (props) => {
     const logout = () => {
+        sessionStorage.removeItem("token");
         props.setUser(null);
     }
 
