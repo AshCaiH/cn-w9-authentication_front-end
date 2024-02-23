@@ -4,7 +4,7 @@ import "./member-list.css";
 import MemberCard from './member-card';
 
 const MemberList = (props) => {
-    const [members, setMembers] = useState([]);
+    const [members, setMembers] = useState(["loading"]);
 
     useEffect(() => {
 
@@ -17,10 +17,6 @@ const MemberList = (props) => {
 
         fetchData();
     }, [props.user]);
-
-    useEffect(() => {
-        console.log(members);
-    }, [members]);
 
     try {
         return (
@@ -35,7 +31,7 @@ const MemberList = (props) => {
         )
     } catch {
         return (
-            <div className="error-message">Invalidation session token. Please log out and try again.</div>
+            <div className="error-message">Invalid session token. Please log out and try again.</div>
         )
     }
 }
