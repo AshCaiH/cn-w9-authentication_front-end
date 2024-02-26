@@ -33,11 +33,14 @@ export async function getRequest(url, headers) {
 }
 
 export async function updateRequest(url, headers, query) {
+    console.log("ding", query);
+
+    // For future reference, this is VITALLY IMPORTANT.
+    headers["Content-Type"] = "application/json" 
 
     return await fetch(url, {
-        method: "POST",
-        mode: "cors",
-        headers: { "Content-Type": "application/json" },
+        method: "PUT",
+        headers: headers,
         body: query,
     }).then((response) => {
         return response.json();
