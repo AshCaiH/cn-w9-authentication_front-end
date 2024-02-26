@@ -23,6 +23,8 @@ const UserControls = (props) => {
             <button className="green centre" onClick={() => {}}>Update</button>
         </form>
 
+        <div className="hdivider" />
+
         { errorMessage &&
         <div className="error-message">{errorMessage}</div>}
         { successMessage &&
