@@ -47,6 +47,10 @@ button {
   border: none;
 }
 
+button.centre {
+  margin: auto;
+}
+
 button.green {
   background-color: rgb(185, 209, 119);
 }
